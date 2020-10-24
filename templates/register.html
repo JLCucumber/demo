@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'lnr:reg' %}">
+{% csrf_token %}
+    <label>username</label>
+    <input name="username">
+    <br>
+    <label>password</label>
+    <input name="password" type="password">
+    <br>
+    <label>Please confirm your password</label>
+    <input name="password1" type="password">
+    <br>
+    <button type="submit">submit</button>
+    <br>
+    {% if error %}
+    {{ error }}
+    {% endif %}
+
+</form>
+<a href="http://127.0.0.1:8000/lnr/login/">
+<button type="submit">back</button>
+</a>
+</body>
+</html>
