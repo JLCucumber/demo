@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'drifter:log' %}">
+{% csrf_token %}
+    <label>username</label>
+    <input name="username">
+    <br>
+    <label>password</label>
+    <input name="password" type="password">
+    <br>
+    <button type="submit">submit</button>
+    <br>
+    {% if error %}
+    {{ error }}
+    {% endif %}
+
+
+</form>
+<a href="/drifter/register/">
+<button type="submit">register</button>
+</a>
+<a href="/drifter/retrieval/">
+<button type="submit">get back password</button>
+</a>
+
+</body>
+</html>

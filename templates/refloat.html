@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捞瓶子</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'drifter:refloat' %}">
+{% csrf_token %}
+    <button type="submit" name="refloat" value="1" >refloat a bottle!</button>
+    {{ res }}
+</form>
+
+
+
+
+
+
+<a href = '/drifter/gateway'>
+    <button type="submit">back to gateway</button>
+</a>
+
+</body>
+</html>

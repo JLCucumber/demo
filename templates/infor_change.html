@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息修改</title>
+</head>
+<body>
+<form method="post" action="{% url "drifter:infor_change" %}">
+    {% csrf_token %}
+    修改昵称？<input type="text" maxlength="20" name="nicheng">
+    修改邮箱？<input type="email" maxlength="30" name="email">
+    修改爱好？<input type="text" maxlength="15" name="hobby">
+    修改性别？（0=男，1=女，其他=不男不女）<input type="number" maxlength="1" name="sex">
+    <button type="submit">提交修改</button>
+</form>
+<a href = '/drifter/user_center/'>
+    <button type="submit">back to the user_center</button>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扔瓶子</title>
+</head>
+<body>
+<form method="post" action="{% url "drifter:cast" %}">
+{% csrf_token %}
+    请输入瓶子的内容:<input type="text" maxlength="50" name="content">
+    请输入您的用户名：<input type="text" maxlength="20" name="username">
+    <button type="submit" name="cast">扔！</button>
+    {{ success }}
+</form>
+<a href="http://127.0.0.1:8000/drifter/gateway/">
+<button type="submit">back to gateway</button>
+</a>
+</body>
+</html>

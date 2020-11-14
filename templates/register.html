@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+
+<form method="post" action="{% url 'drifter:reg' %}">
+{% csrf_token %}
+    nicheng:<input type="char" name="nicheng" maxlength="20"><br>
+    username:<input type="char" name="username" maxlength="20"><br>
+    password:<input type="password" name="password" maxlength="20"><br>
+    password1:<input type="password" name="password1" maxlength="20"><br>
+    sex:<br>
+    male: <input type="radio" name="sex" value=0><br>
+    female: <input type="radio" name="sex" value=1><br>
+    date_of_birth:<input type="date" name="date of birth"><br>
+    hobby:<br>
+    <input type="checkbox" name="hobbies" value=0> Sing <br>
+    <input type="checkbox" name="hobbies" value=1> Dance <br>
+    <input type="checkbox" name="hobbies" value=2> Rap <br>
+    <input type="checkbox" name="hobbies" value=3> Basketball <br>
+
+    <br>
+    email:<input type="email" name="email" >
+    <br>
+    <button type="submit">提交并发送验证码</button>
+    <br>
+
+    {% if error %}
+    {{ error }}
+    {% endif %}
+
+</form>
+<a href="http://127.0.0.1:8000/drifter/login/">
+<button type="submit">back to login</button>
+</a>
+</body>
+</html>

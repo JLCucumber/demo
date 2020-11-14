@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回复</title>
+</head>
+<body>
+<form method="post" action="{% url 'drifter:reply' %}">
+    {% csrf_token %}
+    请输入您要回复的瓶子id:<input type="number " maxlength="100" name="id">
+    请输入您要回复的内容：<input type="text " maxlength="50" name="content">
+    <button type="submit">回复</button>
+
+    {{ success }}
+
+</form>
+<a href="http://127.0.0.1:8000/drifter/gateway/">
+<button type="submit">back to gateway</button>
+</a>
+</body>
+</html>

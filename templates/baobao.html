@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的包包</title>
+</head>
+<body>
+<form method="get" action="{% url "drifter:baobao" %}">
+    我扔出的
+    <br>
+    id owner content finder reply
+    <br>
+    {{ bottle1 }}
+    <br>
+    我捡到的
+    <br>
+    id owner content finder reply
+    <br>
+    {{ bottle2 }}
+</form>
+
+<form method="post" action="{% url "drifter:baobao" %}">
+    {% csrf_token %}
+    请输入要扔回瓶子的id:<input type="number" name="back to the sea">
+    <button type="submit">扔回大海</button>
+    {{ success }}
+</form>
+<form method="post" action="{% url "drifter:baobao" %}">
+    "如果您要回复，请记住对应瓶子的id!"
+    <button type="submit" value="1" name="reply">前往回复</button>
+</form>
+<a href="http://127.0.0.1:8000/drifter/gateway/">
+<button type="submit">back to gateway</button>
+</a>
+</body>
+</html>
